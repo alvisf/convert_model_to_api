@@ -6,10 +6,10 @@ models_collection = database.models
 
 class Model():
     @staticmethod
-    def create_model(model_name, model):
-        models_collection.insert_one({'name': model_name, 'model': model})
+    def create_model(user_name , model_name, model):
+        models_collection.insert_one({'user_name':user_name,'model_name': model_name, 'model': model})
         return 'Created {} model'.format(model_name)
 
     @staticmethod
-    def get_model(model_name):
-        return models_collection.find_one({'name': model_name})['model']
+    def get_model(user_name , model_name):
+        return models_collection.find_one({'user_name':user_name,'model_name': model_name})['model']

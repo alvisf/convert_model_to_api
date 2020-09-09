@@ -29,8 +29,9 @@ def save_model(): #endpoint to upload the model to MongoDB
         model = pickle.load(file)    
     pickled_model = pickle.dumps(model)
 
+    user_name = request.form['user-name']
     model_name = request.form['model-name']
-    Model.create_model(model_name, pickled_model)
+    Model.create_model(user_name , model_name, pickled_model)
     os.remove(file_name) #remove .pkl file after saving it in MongoDB
-    return '<h1>Inserted successfully !! </h1>'
+    return '<p>http://localhost:5000/api/{}/{}</p>'.format(user_name,model_name)
 
