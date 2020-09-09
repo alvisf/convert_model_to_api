@@ -31,6 +31,6 @@ def save_model(): #endpoint to upload the model to MongoDB
 
     model_name = request.form['model-name']
     Model.create_model(model_name, pickled_model)
-    os.remove(file_name) #remove .pkl file after saving it in heroku
+    os.remove(file_name) #remove .pkl file after saving it in MongoDB
     return '<h1>Inserted successfully !! </h1>'
 
