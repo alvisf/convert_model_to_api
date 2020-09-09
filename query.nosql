@@ -1,5 +1,0 @@
-db.model.insert({
-  userId: 'alvisf0731',
-  modelFile: './model.pkl',
-  apiId: 'News',
-})
